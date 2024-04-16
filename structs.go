@@ -17,9 +17,7 @@ func main() {
 	userLastName := getUserData("Please enter your last name: ")
 	userBirthdate := getUserData("Please enter your birthdate (MM/DD/YYYY): ")
 
-	var appUser User
-
-	appUser = User{
+	appUser := User{
 		firstName: userFirstName,
 		lastName:  userLastName,
 		birthdate: userBirthdate,
@@ -28,10 +26,10 @@ func main() {
 
 	// ... do something awesome with that gathered data!
 
-	outputUserData(appUser)
+	appUser.outputUserDetails()
 }
 
-func outputUserData(u User) {
+func (u User) outputUserDetails() {
 	fmt.Println("First Name: ", u.firstName)
 	fmt.Println("Last Name: ", u.lastName)
 	fmt.Println("Birthdate: ", u.birthdate)
