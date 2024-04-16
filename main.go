@@ -7,6 +7,7 @@ import (
 	"strings"
 
 	"example.com/go-note-app/note"
+	"example.com/go-note-app/todo"
 )
 
 func main() {
