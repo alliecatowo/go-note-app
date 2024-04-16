@@ -2,43 +2,34 @@ package main
 
 import (
 	"fmt"
+	"example.com/go-note-app/note"
 )
 
 func main() {
-	title, content, err := getNoteData()
+	title, content := getNoteData()
 
+	userNote, err := note.New(title, content)
+	
 	if err != nil {
-		fmt.Println("Error getting note data:", err)
+		fmt.Println("Error creating userNote", err)
 		return
 	}
 
 	fmt.Println("Title:", title)
 	fmt.Println("Content:", content)
-
 }
 
-func getNoteData() (string, string, error) {
-	title, err := getUserInput("Note title:")
+func getNoteData() (string, string) {
+	title := getUserInput("Note title:")
+	content := getUserInput("Note content:")
 
-	if err != nil {
-		fmt.Println("Error getting title:", err)
-		return "", "", err
-	}
-
-	content, nil := getUserInput("Note content:")
-
-	if err != nil {
-		fmt.Println("Error getting content:", err)
-		return "", "", err
-	}
-
-	return title, content, nil
+	return title, content
 }
 
-func getUserInput(prompt string) (string, error) {
+func getUserInput(prompt string) string {
 	fmt.Print(prompt)
 	var value string
 	fmt.Scan(&value)
 
-	return value, nil
+	return value
 }
