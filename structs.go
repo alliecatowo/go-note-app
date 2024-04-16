@@ -2,12 +2,14 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
 type User struct {
 	firstName string
 	lastName  string
 	birthdate string
+	createdAt time.Time
 }
 
 func main() {
