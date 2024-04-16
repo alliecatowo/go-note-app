@@ -1,3 +1,3 @@
-module example.com/structs
+module example.com/go-note-app
 
-go 1.21.2
+go 1.22.2
