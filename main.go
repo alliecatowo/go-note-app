@@ -41,14 +41,14 @@ func main() {
 		return
 	}
 
-	fmt.Println("Note saved successfully")
-
 	todo.Display()
 	err = saveData(todo)
+
 	if err != nil {
 		fmt.Println("Error saving todo", err)
 		return
 	}
+
 	fmt.Println("Todo saved successfully")
 }
 
